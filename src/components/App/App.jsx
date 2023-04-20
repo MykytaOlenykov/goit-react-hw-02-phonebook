@@ -47,7 +47,7 @@ export class App extends Component {
     return contacts.some(({ name }) => name === newName);
   }
 
-  getFilterContacts() {
+  getFilteredContacts() {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
 
@@ -58,7 +58,7 @@ export class App extends Component {
 
   render() {
     const { filter } = this.state;
-    const filteredContacts = this.getFilterContacts();
+    const filteredContacts = this.getFilteredContacts();
 
     return (
       <S.Container>
