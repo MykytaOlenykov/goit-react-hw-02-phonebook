@@ -49,7 +49,7 @@ export class App extends Component {
 
   getFilteredContacts() {
     const { contacts, filter } = this.state;
-    const normalizedFilter = filter.toLowerCase();
+    const normalizedFilter = filter.toLowerCase().trim();
 
     return contacts.filter(({ name }) =>
       name.toLowerCase().includes(normalizedFilter)
