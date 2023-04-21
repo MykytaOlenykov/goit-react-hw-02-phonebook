@@ -1,18 +1,10 @@
 // import React, { Component } from 'react';
-import { Formik, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
+import { FormError } from 'components/FormError';
 import PropTypes from 'prop-types';
 import * as S from './ContactForm.styled';
 // import { Form, Input, Label, Button } from './ContactForm.styled';
-
-const FormError = ({ name }) => {
-  return (
-    <ErrorMessage
-      name={name}
-      render={message => <S.ErrorText>{message}</S.ErrorText>}
-    />
-  );
-};
 
 const validatePattern = {
   name: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ]+((['-][a-zA-Zа-яА-ЯґҐєЄіІїЇ]+)*([ ]?[a-zA-Zа-яА-ЯґҐєЄіІїЇ]+)*)*$/,
