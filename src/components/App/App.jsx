@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm';
+import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { GlobalStyle } from 'components/GlobalStyle';
+import { getNormalizedName } from 'utils';
 import * as S from './App.styled';
-import { ContactList } from 'components/ContactList';
 
 export class App extends Component {
   state = {
@@ -24,7 +25,7 @@ export class App extends Component {
   };
 
   handleAddContact = ({ name, number }) => {
-    const normalizedName = name.trim();
+    const normalizedName = getNormalizedName(name);
 
     if (this.contactValidationByName(normalizedName)) {
       alert(`${normalizedName} is already in contacts.`);
